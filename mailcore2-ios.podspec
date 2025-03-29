@@ -15,13 +15,4 @@ Pod::Spec.new do |spec|
   spec.preserve_paths = "cocoapods-build/include/MailCore/*.h"
   spec.vendored_libraries = "cocoapods-build/lib/libMailCore-ios.a"
   spec.libraries = ["xml2", "iconv", "z", "c++", "resolv"]
-  spec.prepare_command = <<-CMD
-    if [ ! -f "0.6.4.zip" ]; then
-      echo "Download failed or file missing!"
-      exit 1
-    fi
-    unzip 0.6.4.zip -d mailcore2-extracted
-    mv mailcore2-extracted/* .
-    rm -rf mailcore2-extracted
-  CMD
 end
