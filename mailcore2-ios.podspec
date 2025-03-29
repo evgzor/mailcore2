@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.preserve_paths = "cocoapods-build/include/MailCore/*.h"
   spec.vendored_libraries = "cocoapods-build/lib/libMailCore-ios.a"
   spec.libraries = ["xml2", "iconv", "z", "c++", "resolv"]
-  s.prepare_command = <<-CMD
+  spec.prepare_command = <<-CMD
     # Проверяем, что архив находится в директории проекта
     if [ ! -f "0.6.4.zip" ]; then
       echo "Download failed or file missing!"
