@@ -15,5 +15,9 @@ Pod::Spec.new do |spec|
   spec.preserve_paths = "include/MailCore/*.h"
   spec.vendored_libraries = "lib/libMailCore-ios.a"
   spec.libraries = ["xml2", "iconv", "z", "c++", "resolv"]
-  spec.prepare_command = "curl -O https://github.com/MailCore/mailcore2/raw/master/LICENSE"
+  spec.prepare_command = <<-CMD
+    unzip mailcore2-ios-12.zip -d mailcore2-extracted
+    mv mailcore2-extracted/* .
+    rm -rf mailcore2-extracted
+  CMD
 end
