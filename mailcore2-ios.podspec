@@ -20,7 +20,6 @@ Pod::Spec.new do |spec|
 
   spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
 
-   # Добавляем xcconfig параметры
    spec.xcconfig = {
      'CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER' => 'NO',
      'CONFIGURATION_BUILD_DIR' => '${PODS_CONFIGURATION_BUILD_DIR}/mailcore2-ios',
