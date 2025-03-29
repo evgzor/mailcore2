@@ -21,8 +21,7 @@ Pod::Spec.new do |spec|
   spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
 
   spec.prepare_command = <<-CMD
-    curl -O https://storage.googleapis.com/fileserver.gxservers.com/mattmaddux/mailcore2/0.6.4.zip
-    unzip 0.6.4.zip -d mailcore2-extracted
+    echo "Текущая директория перед скачиванием: $(pwd)"
     mv mailcore2-extracted/*/* .
     rm -rf mailcore2-extracted
   CMD
