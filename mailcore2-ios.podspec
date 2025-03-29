@@ -20,9 +20,20 @@ Pod::Spec.new do |spec|
 
   spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
 
-  spec.prepare_command = <<-CMD
-    echo "Текущая директория перед скачиванием: $(pwd)"
-    mv mailcore2-extracted/*/* .
-    rm -rf mailcore2-extracted
+  spec.prepare_command = spec.prepare_command = <<-CMD
+    # Печать текущей директории перед перемещением файлов
+    echo "Текущая директория: $(pwd)"
+    
+    # Проверяем, что директория с распакованными файлами существует
+    if [ ! -d "$(pwd)/mailcore2-ios" ]; then
+      echo "Директория mailcore2-ios не найдена! Пожалуйста, распакуйте архив перед выполнением скрипта."
+      exit 1
+    fi
+
+    # Перемещаем все файлы из $(pwd)/mailcore2-ios в текущую директорию
+    mv $(pwd)/mailcore2-ios/*/* .
+
+    # Печать текущей директории после перемещения файлов
+    echo "Текущая директория после перемещения файлов: $(pwd)"
   CMD
 end
