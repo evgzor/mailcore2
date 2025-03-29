@@ -15,5 +15,5 @@ Pod::Spec.new do |spec|
   spec.preserve_paths = "cocoapods-build/include/MailCore/*.h"
   spec.vendored_libraries = "cocoapods-build/lib/libMailCore-ios.a"
   spec.libraries = ["xml2", "iconv", "z", "c++", "resolv"]
-  spec.prepare_command = "scripts/build-mailcore2-ios-cocoapod.sh"
+  spec.prepare_command = "mailcore2-ios/scripts/build-mailcore2-ios-cocoapod.sh"
 end
