@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
 
   spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
 
-  spec.prepare_command = spec.prepare_command = <<-CMD
+spec.prepare_command = <<-CMD
     # Печать текущей директории перед перемещением файлов
     echo "Текущая директория: $(pwd)"
     
@@ -30,8 +30,8 @@ Pod::Spec.new do |spec|
       exit 1
     fi
 
-    # Перемещаем все файлы из $(pwd)/mailcore2-ios в текущую директорию
-    mv $(pwd)/mailcore2-ios/*/* .
+    # Перемещаем все файлы из $(pwd)/mailcore2-ios в правильную директорию
+    mv $(pwd)/mailcore2-ios/*/* $(pwd)/Pods/mailcore2-ios
 
     # Печать текущей директории после перемещения файлов
     echo "Текущая директория после перемещения файлов: $(pwd)"
