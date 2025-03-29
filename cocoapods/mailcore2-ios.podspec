@@ -16,7 +16,11 @@ Pod::Spec.new do |spec|
   spec.vendored_libraries = "lib/libMailCore-ios.a"
   spec.libraries = ["xml2", "iconv", "z", "c++", "resolv"]
   spec.prepare_command = <<-CMD
-    unzip mailcore2-ios-12.zip -d mailcore2-extracted
+    if [ ! -f "0.6.4.zip" ]; then
+      echo "Download failed or file missing!"
+      exit 1
+    fi
+    unzip 0.6.4.zip -d mailcore2-extracted
     mv mailcore2-extracted/* .
     rm -rf mailcore2-extracted
   CMD
