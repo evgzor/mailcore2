@@ -20,4 +20,6 @@ Pod::Spec.new do |spec|
 
   spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
 
+  spec.header_dir = 'MailCore'
+
 end
