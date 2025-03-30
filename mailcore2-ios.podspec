@@ -18,8 +18,6 @@ Pod::Spec.new do |spec|
 
   spec.vendored_libraries = 'lib/libMailCore-ios.a'
 
-  spec.source_files = 'include/MailCore/*.h'
-
   spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
 
 end
