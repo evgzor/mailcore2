@@ -13,4 +13,8 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = false
 
+  spec.public_header_files = 'include/MailCore/*.h'
+
+
+
 end
