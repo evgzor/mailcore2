@@ -13,14 +13,4 @@ Pod::Spec.new do |spec|
 
   spec.requires_arc = false
 
-  spec.public_header_files = 'include/MailCore/*.h'
-
-  spec.preserve_paths = 'include/MailCore/*.h'
-
-  spec.vendored_libraries = 'lib/libMailCore-ios.a'
-
-  spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
-
-  spec.header_dir = 'MailCore'
-
 end
