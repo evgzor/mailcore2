@@ -15,6 +15,4 @@ Pod::Spec.new do |spec|
 
   spec.public_header_files = 'include/MailCore/*.h'
 
-
-
 end
