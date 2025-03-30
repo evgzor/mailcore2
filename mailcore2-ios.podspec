@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
 
   spec.source        = { :http => 'https://storage.googleapis.com/fileserver.gxservers.com/mattmaddux/mailcore2/0.6.4.zip', :flatten => true }
 
-  spec.platform     = :ios, '8.0'
+  spec.platform     = :ios, '12.0'
 
   spec.requires_arc = false
 
@@ -17,6 +17,8 @@ Pod::Spec.new do |spec|
   spec.preserve_paths = 'include/MailCore/*.h'
 
   spec.vendored_libraries = 'lib/libMailCore-ios.a'
+
+  spec.source_files = 'include/MailCore/**/*.h'
 
   spec.libraries = ['xml2', 'iconv', 'z', 'c++', 'resolv']
 
